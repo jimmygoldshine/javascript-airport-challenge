@@ -1,13 +1,19 @@
 describe("Airport", function() {
 
-  var airport;
-  var plane = jasmine.createSpyObj('plane', ['land']);
+var airport;
+
 
   beforeEach(function() {
     airport = new Airport();
+    plane = jasmine.createSpyObj('plane', ['land']);
+  });
+
+  it("should confirm if plane hasn't landed", function() {
+    expect(airport.is_landed(plane)).toEqual(false);
   });
 
   it("should authorise a plane to land", function() {
-    expect(airport.is_landed(plane)).toEqual(false);
+    airport.authoriseLanding(plane);
+    expect(airport.is_landed(plane)).toEqual(true);
   });
 });
