@@ -1,7 +1,8 @@
 var Airport = function() {
 
+  weather = new Weather();
   this.planePopulation = [];
-  this.weatherCondition = 'Fair'
+  this.weatherCondition = weather.weatherCondition();
 
 };
 
