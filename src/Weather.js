@@ -9,5 +9,4 @@ var Weather = function () {};
   };
   Weather.prototype.randomNumber = function() {
     return Math.floor(Math.random() * 6) + 1;
-
   };
