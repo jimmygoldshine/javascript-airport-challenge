@@ -44,5 +44,9 @@ describe("Airport:", function() {
     it("a plane is refused landing", function() {
       expect(function() {airport.landPlane(plane)}).toThrow(new Error('Stormy weather preventing landing!'))
     });
+
+    it("a plane is refused take off",function(){
+      expect(function() {airport.takeOffPlane(plane)}).toThrow(new Error('Stormy weather preventing take-off!'))
+    });
   });
 });

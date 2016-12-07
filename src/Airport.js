@@ -15,8 +15,12 @@ Airport.prototype.landPlane = function(plane) {
 };
 
 Airport.prototype.takeOffPlane = function(plane) {
+  if(this.IsStormy()) {
+    throw new Error('Stormy weather preventing take-off!');
+  } else {
   this.planePopulation.pop();
   return 'A plane has taken off!';
+}
 };
 
 Airport.prototype.planeCount = function() {
